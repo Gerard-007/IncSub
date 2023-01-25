@@ -2,7 +2,7 @@
 ![Logo](https://res.cloudinary.com/geetechlab-com/image/upload/v1674630764/incsub/IncSub_waked9.png)
 
 
-# IncSub
+# A Flask TODO Project API Endpoint
 
 A TODO API web application utilizing the Flask framework
 
@@ -25,31 +25,120 @@ A TODO API web application utilizing the Flask framework
 IncSub is released under the [MIT](https://choosealicense.com/licenses/mit/)
 
 
-## Installation
+## Run Locally
 
-Clone project and run
-
-```bash
-  # Create virtual environment and run
-  - $ python -m venv flask_venv
-
-```
-```bash
-  # For Linux/Mac Machine run
-  - $ flask_venv/bin/activate
-```
+Clone the project
 
 ```bash
-  # For Windows users run
-  - $ flask_venv/Script/activate
-```
-    
-```bash
-  # Install project dev packages
-  - $ pip install -r requirements.txt
+  git clone https://github.com/Gerard-007/IncSub
 ```
 
+Go to the project directory
+
 ```bash
-  # Run Development Server
-  - $ flask run
+  cd my-project
 ```
+
+Create virtual environment
+
+```bash
+  python -m venv flask_venv
+```
+
+Activate virtual environment(Linux/Mac Machine)
+
+```bash
+  flask_venv/bin/activate
+```
+
+Activate virtual environment(Windows Machine)
+
+```bash
+  flask_venv/Script/activate
+```
+
+Install dependencies
+
+```bash
+  pip install -r requirements.txt
+```
+
+Start the server
+
+```bash
+  flask run
+```
+
+
+
+
+## API Reference
+
+You can use "Postman" or any other Tool to run this Endpoint locally.
+
+
+#### Get all Todos
+
+```http
+  GET 
+  http://localhost/
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+|     None  |  `list[]`  | Gets all Todos or Empty List[]|
+
+
+#### Create Todo
+
+```http
+  POST 
+  http://localhost/
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | **Required**. Name of todo |
+| `status` | `string` | **Required**. "completed" or "pending" |
+
+
+#### Get Todo
+
+```http
+  GET 
+  http://localhost/{id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `int` | **Required**. Id of Todo to fetch |
+
+
+#### Update Todo
+
+```http
+  PUT 
+  http://localhost/{id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `int` | **Required**. Id of Todo to Update |
+
+
+#### Delete Todo
+
+```http
+  DELETE 
+  http://localhost/{id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `int` | **Required**. Id of Todo to Delete |
+
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://dev.to/geetechlab)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gerard-nwazuruoke-geetechlab/)
+
