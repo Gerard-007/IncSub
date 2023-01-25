@@ -1,6 +1,7 @@
 import enum
 from app.database import db
 from datetime import datetime
+from sqlalchemy_utils.types import ChoiceType
 
 # Task Status Model
 class TaskStatusEnum(enum.Enum):
@@ -16,7 +17,7 @@ class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     status = db.Column(
-        ChoiceType(STATUS), 
+        ChoiceType(STATUS),
         default=TaskStatusEnum.pending,
         nullable=False
     )
